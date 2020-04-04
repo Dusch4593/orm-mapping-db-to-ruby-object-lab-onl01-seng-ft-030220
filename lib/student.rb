@@ -115,7 +115,7 @@ class Student
   
   
   def self.first_student_in_grade_10 
-    self.first_X_students_in_grade_10(1)
+    self.first_X_students_in_grade_10(1).flatten
   end
 end
 
