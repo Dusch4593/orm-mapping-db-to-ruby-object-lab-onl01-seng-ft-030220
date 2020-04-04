@@ -103,7 +103,6 @@ class Student
     SQL
     
     students = DB[:conn].execute(sql, x)
-    binding.pry
   end
 end
 
