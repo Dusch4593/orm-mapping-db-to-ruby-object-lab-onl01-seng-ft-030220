@@ -84,7 +84,10 @@ class Student
     SQL
     
     student_array = DB[:conn].execute(sql).collect do |row|
-      binding.pry
+      student = self.new 
+      student.id = row[0]
+      student.name = row[1]
+      student.grade = row[2]
     end
     binding.pry
   end
