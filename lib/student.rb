@@ -83,15 +83,15 @@ class Student
       WHERE students.grade <= 11;
     SQL
     
-    student_array = [] 
+    students = []
     DB[:conn].execute(sql).each do |row|
       student = self.new 
       student.id = row[0]
       student.name = row[1]
       student.grade = row[2]
-      student_array << student
+      students << student
     end
-    student_array
+    students
   end
   
   def self.first_X_students_in_grade_10(x) 
@@ -102,7 +102,15 @@ class Student
       LIMIT ?;
     SQL
     
-    students = DB[:conn].execute(sql, x)
+    students = []
+    DB[:conn].execute(sql, x).each do |row|
+      student = self.new 
+      student.id = row[0]
+      student.name = row[1]
+      student.grade = row[2]
+      students << student
+    end
+    students
   end
 end
 
