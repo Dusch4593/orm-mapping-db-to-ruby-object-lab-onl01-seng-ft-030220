@@ -84,7 +84,10 @@ class Student
     SQL
     
     DB[:conn].execute(sql).collect do |row|
-      student = self.new(row)
+      student = self.new 
+      student.id = row[0]
+      student.name = row[1]
+      student.grade = row[2]
     end
   end
 end
