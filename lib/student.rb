@@ -84,8 +84,7 @@ class Student
     SQL
     
     DB[:conn].execute(sql).collect do |row|
-      row 
-      #binding.pry
+      student = self.new(row)
     end
   end
 end
