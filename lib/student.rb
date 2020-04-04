@@ -83,14 +83,7 @@ class Student
       WHERE students.grade <= 11;
     SQL
     
-    student_array = DB[:conn].execute(sql).collect do |row|
-      student = self.new 
-      student.id = row[0]
-      student.name = row[1]
-      student.grade = row[2]
-    end
-    student_array
-    binding.pry
+    DB[:conn].execute(sql)
   end
 end
 
