@@ -125,7 +125,9 @@ class Student
       WHERE students.grade = ?;
     SQL
     
-    
+    DB[:conn].execute(sql, grade).collect do |row|
+      row 
+    end
   end
 end
 
