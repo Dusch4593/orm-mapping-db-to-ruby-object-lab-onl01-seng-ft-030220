@@ -86,6 +86,7 @@ class Student
     student_array = DB[:conn].execute(sql).collect do |row|
       binding.pry
     end
+    binding.pry
   end
 end
 
